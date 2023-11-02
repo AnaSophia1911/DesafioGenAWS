@@ -11,4 +11,6 @@ FROM openjdk:11
 
 EXPOSE 8081
 
-COPY --from=build 
+COPY --from=build /target/genAws-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
